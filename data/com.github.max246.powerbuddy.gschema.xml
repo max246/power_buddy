@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="powerbuddy">
+	<schema id="com.github.max246.powerbuddy" path="/com/github/max246/powerbuddy/">
+	</schema>
+</schemalist>
