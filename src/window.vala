@@ -55,9 +55,16 @@ var label = new Gtk.Label("aaaaaaa");
 stack.add_named(label, "label");
 
 
-var pane = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
+var pane = new Gtk.Paned (Gtk.Orientation.VERTICAL);
 
 var sett =  new Powerbuddy.BatteryView();
+
+Gtk.HeaderBar bar =  new Gtk.HeaderBar ();
+        Gtk.Button button = new Gtk.Button.with_label ("Switch");
+bar.pack_start (button);
+
+set_titlebar(bar);
+       //pane.pack1 (bar, false, false);
 pane.pack1 (sett, false, false);
 //pane.pack2( stack ,false,false);
 
