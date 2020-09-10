@@ -13,6 +13,8 @@ public class BatteryView : Gtk.Paned {
         var history_page = new Powerbuddy.HistoryPage();
         var stats_page = new Powerbuddy.StatsPage ();
 
+
+
         var stack = new Gtk.Stack ();
         stack.add_named (battery_page, "battery_page");
         stack.add_named (history_page, "history_page");

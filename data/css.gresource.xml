@@ -6,6 +6,9 @@
   </gresource>
 
    <gresource prefix="/com/github/max246/powerbuddy/icons">
+         <file alias="summary.svg" compressed="true">icons/summary.svg</file>
+         <file alias="history.svg" compressed="true">icons/history.svg</file>
+         <file alias="stats.svg" compressed="true">icons/stats.svg</file>
     <file alias="workspaces-new-item.svg" compressed="true">icons/64/com.github.max246.powerbuddy.svg</file>
     <file alias="workspaces-new-workspace.svg" compressed="true">icons/64/com.github.max246.powerbuddy.svg</file>
   </gresource>

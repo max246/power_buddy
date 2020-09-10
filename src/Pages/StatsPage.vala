@@ -5,7 +5,8 @@ public class StatsPage : Granite.SettingsPage {
 
            Object (
 
-            title: "Stats"
+            title: "Stats",
+            icon_name : "stats"
         );
 
     }

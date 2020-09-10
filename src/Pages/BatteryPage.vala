@@ -5,7 +5,7 @@ public class BatteryPage : Granite.SettingsPage {
         var user_name = Environment.get_user_name ();
            Object (
            header: header,
-
+            icon_name : "summary",
             title: "Summary"
         );
 

@@ -5,7 +5,8 @@ public class HistoryPage : Granite.SettingsPage {
 
            Object (
 
-            title: "History"
+            title: "History",
+            icon_name : "history"
         );
 
     }
