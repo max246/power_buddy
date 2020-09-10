@@ -1,6 +1,10 @@
 sources = [
   'src/main.vala',
   'src/window.vala',
+  'src/Pages/BatteryPage.vala',
+  'src/Pages/HistoryPage.vala',
+  'src/Pages/StatsPage.vala',
+  'src/Views/BatteryView.vala',
 
 ]
 
