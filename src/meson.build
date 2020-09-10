@@ -1,15 +1,15 @@
 sources = [
   'src/main.vala',
   'src/window.vala',
+  'src/settings.vala',
   'src/Pages/BatteryPage.vala',
   'src/Pages/HistoryPage.vala',
   'src/Pages/StatsPage.vala',
   'src/Pages/ACPage.vala',
   'src/Pages/DevicePage.vala',
   'src/Views/BatteryView.vala',
-
+  'src/Widgets/TopBar.vala',
 ]
-
 
 powerbuddy_deps = [
   dependency('gio-2.0', version: '>= 2.50'),

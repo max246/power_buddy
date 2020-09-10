@@ -25,57 +25,27 @@ namespace Powerbuddy {
 		public Window (Gtk.Application app) {
 			Object (application: app,
 			    height_request: 600,
-                icon_name: "com.github.max246.powerbuddy",
+                icon_name: "workspaces-new-item",
                 resizable: true,
                 title: _ ("Power Buddy"),
                 width_request: 800);
-
-
-
 			}
 			construct {
-  window_position = Gtk.WindowPosition.CENTER;
-        set_default_size (600, 800);
-			var library_category = new Granite.Widgets.SourceList.ExpandableItem ("Battery #1");
+                window_position = Gtk.WindowPosition.CENTER;
+                set_default_size (600, 800);
 
-var music_item = new Granite.Widgets.SourceList.Item ("Summary");
+			    var pane = new Gtk.Paned (Gtk.Orientation.VERTICAL);
 
-library_category.add (music_item);
+                var sett =  new Powerbuddy.BatteryView();
 
+                Powerbuddy.TopBar bar = new Powerbuddy.TopBar();
+                set_titlebar(bar);
+                //pane.pack1 (bar, false, false);
+                pane.pack1 (sett, false, false);
+                //pane.pack2( stack ,false,false);
 
-
-var source_list = new Granite.Widgets.SourceList ();
-var root = source_list.root;
-
-root.add (library_category);
-
-
-var         stack = new Gtk.Stack ();
-var label = new Gtk.Label("aaaaaaa");
-stack.add_named(label, "label");
-
-
-var pane = new Gtk.Paned (Gtk.Orientation.VERTICAL);
-
-var sett =  new Powerbuddy.BatteryView();
-
-Gtk.HeaderBar bar =  new Gtk.HeaderBar ();
-        Gtk.Button button = new Gtk.Button.with_label ("Switch");
-bar.pack_start (button);
-
-set_titlebar(bar);
-       //pane.pack1 (bar, false, false);
-pane.pack1 (sett, false, false);
-//pane.pack2( stack ,false,false);
-
-
-add(pane);
-
-
-
-
-show_all();
-
+                add(pane);
+                show_all();
 		}
 	}
 }
