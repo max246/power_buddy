@@ -18,7 +18,7 @@ namespace Powerbuddy {
             string ls_stdout = "";
             string ls_stderr = "";
             int ls_status = 0;
-                 string[] spawn_args = {"flatpak-spawn" , " --host", " upower ","-e"};
+                 string[] spawn_args = {"flatpak-spawn" , " --host", "ls"};
 		string[] spawn_env = Environ.get ();
 		string[] vars = Environ.get ();
 	foreach (unowned string str in vars) {

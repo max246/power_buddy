@@ -50,9 +50,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/max246/power_buddy.git",
-                    "branch" : "master"
+                    "type" : "dir",
+                    "path" : "/home/christian/projects/power_buddy"
                 }
             ],
             "post-install" : [
