@@ -39,6 +39,7 @@ namespace Powerbuddy {
                 var sett =  new Powerbuddy.BatteryView();
 
                 Powerbuddy.TopBar bar = new Powerbuddy.TopBar();
+                bar.set_app(application);
                 set_titlebar(bar);
                 //pane.pack1 (bar, false, false);
                 pane.pack1 (sett, false, false);
