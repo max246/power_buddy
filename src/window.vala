@@ -49,11 +49,6 @@ namespace Powerbuddy {
                 bar.set_app(application);
                 set_titlebar(bar);
 
-                //pane.pack1 (bar, false, false);
-
-                //pane.pack2( stack ,false,false);
-                //
-
                 add(loading_paned);
                 show_all();
 
@@ -65,18 +60,16 @@ namespace Powerbuddy {
                     print ( "error in the thread");
                 }
 
-
-
                 new MainLoop ().run ();
 		}
 
 		public void update_ui(Gee.ArrayList<Powerbuddy.UPowerModel> models) {
-		   /*  this.models = models;
-		     remove(loading_paned);
-		     var battery_view =  new Powerbuddy.BatteryView(models);
+		    this.models = models;
+		    remove(loading_paned);
+		    var battery_view =  new Powerbuddy.BatteryView(models);
             main_paned.pack1 (battery_view, false, false);
-             add(main_paned);
-            show_all();*/
+            add(main_paned);
+            show_all();
 		}
 	}
 }

@@ -1,11 +1,15 @@
 namespace Powerbuddy {
     public class HistoryPage : Granite.SettingsPage {
-        public HistoryPage () {
+
+        Powerbuddy.BatteryModel model;
+        public HistoryPage (Powerbuddy.BatteryModel model) {
 
                Object (
                 title: "History",
                 icon_name : "history"
             );
+            this.model = model;
+
         }
 
         construct {
@@ -29,5 +33,7 @@ namespace Powerbuddy {
                 title = title_entry.text;
             });
         }
+
+
     }
 }

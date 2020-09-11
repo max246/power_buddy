@@ -45,20 +45,19 @@
                 }
             ]
         },
-          {
+        {
             "name" : "powerbuddy",
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "dir",
-                    "path" : "/home/christian/projects/power_buddy"
+                    "path" : "."
                 }
             ],
             "post-install" : [
                 "sed -i s:Exec=com.github.max246.powerbuddy:Exec=/app/bin/powerbuddy-wrapper: /app/share/applications/com.github.max246.powerbuddy.desktop"
             ]
         }
-
     ],
     "build-options" : {
         "env" : {

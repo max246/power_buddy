@@ -1,19 +1,26 @@
 namespace Powerbuddy {
     public class ACPage : Granite.SettingsPage {
-        public ACPage (string header) {
+
+        Powerbuddy.ACModel model;
+        Gtk.Label title_label;
+        Gtk.Label charger_label;
+        public ACPage (Powerbuddy.ACModel model) {
 
                Object (
-               header: header,
+               header: model.get_header(),
                 icon_name : "ac-adapter-symbolic",
                 title: "Summary"
             );
+            this.model = model;
+            this.update_data();
+
         }
 
         construct {
-            var title_label = new Gtk.Label ("Last update:");
+            this.title_label = new Gtk.Label ("Last update:");
             title_label.xalign = 1;
 
-            var charger_label = new Gtk.Label ("Charger is connected");
+            this.charger_label = new Gtk.Label ("Charger is connected");
             charger_label.xalign = 1;
 
             var content_area = new Gtk.Grid ();
@@ -24,6 +31,14 @@ namespace Powerbuddy {
             content_area.attach (charger_label, 0, 2, 1, 1);
 
             add (content_area);
+        }
+
+        public void update_data() {
+            this.title_label.set_text("Last update: "+this.model.last_update.to_string() + " seconds ago");
+
+            this.charger_label.set_text(this.model.get_status());
+
+            show_all();
         }
     }
 }
