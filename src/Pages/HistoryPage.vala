@@ -1,7 +1,7 @@
 namespace Powerbuddy {
     public class HistoryPage : Granite.SettingsPage {
         public HistoryPage () {
-            var user_name = Environment.get_user_name ();
+
                Object (
                 title: "History",
                 icon_name : "history"

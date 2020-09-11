@@ -29,7 +29,8 @@ dependencies = [
     dependency ('gtk+-3.0'),
     dependency ('gee-0.8'),
     dependency ('granite'),
-    dependency ('json-glib-1.0')
+    dependency ('json-glib-1.0'),
+   # dependency ('libupower-glib-dev'),
 ]
 
 subdir ('src')

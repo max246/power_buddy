@@ -1,7 +1,7 @@
 namespace Powerbuddy {
     public class StatsPage : Granite.SettingsPage {
         public StatsPage () {
-            var user_name = Environment.get_user_name ();
+
                Object (
                 title: "Stats",
                 icon_name : "stats"

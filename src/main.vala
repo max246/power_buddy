@@ -17,6 +17,10 @@
  */
 
 public static int main (string[] args) {
+   if (!Thread.supported ()) {
+        stderr.printf ("Cannot run without thread support.\n");
+        return 0;
+    }
 	var app = new Gtk.Application ("com.github.max246.powerbuddy", ApplicationFlags.FLAGS_NONE);
 	app.activate.connect (() => {
 		var win = app.active_window;

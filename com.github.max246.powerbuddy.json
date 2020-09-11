@@ -1,0 +1,68 @@
+{
+    "app-id" : "com.github.max246.powerbuddy",
+    "runtime" : "org.freedesktop.Platform",
+    "runtime-version" : "19.08",
+    "sdk" : "org.freedesktop.Sdk",
+    "base" : "io.elementary.BaseApp",
+    "base-version" : "juno-19.08",
+    "command" : "powerbuddy-wrapper",
+    "finish-args" : [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--system-talk-name=org.freedesktop.UPower",
+        "--socket=wayland",
+        "--filesystem=host",
+        "--talk-name=org.freedesktop.Flatpak"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        {
+            "name" : "wrapper",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "install -m755 powerbuddy-wrapper /app/bin"
+            ],
+            "sources" : [
+                {
+                    "type" : "script",
+                    "dest-filename" : "powerbuddy-wrapper",
+                    "commands" : [
+                        "export PATH=$PATH:/run/host/usr/bin",
+                        "export XDG_DATA_DIRS=$XDG_DATA_DIRS:/run/host/usr/share",
+                        "com.github.max246.powerbuddy"
+                    ]
+                }
+            ]
+        },
+          {
+            "name" : "powerbuddy",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/max246/power_buddy.git",
+                    "branch" : "master"
+                }
+            ],
+            "post-install" : [
+                "sed -i s:Exec=com.github.max246.powerbuddy:Exec=/app/bin/powerbuddy-wrapper: /app/share/applications/com.github.max246.powerbuddy.desktop"
+            ]
+        }
+
+    ],
+    "build-options" : {
+        "env" : {
+        }
+    }
+}

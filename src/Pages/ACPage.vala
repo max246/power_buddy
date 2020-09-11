@@ -1,7 +1,7 @@
 namespace Powerbuddy {
     public class ACPage : Granite.SettingsPage {
         public ACPage (string header) {
-            var user_name = Environment.get_user_name ();
+
                Object (
                header: header,
                 icon_name : "ac-adapter-symbolic",
