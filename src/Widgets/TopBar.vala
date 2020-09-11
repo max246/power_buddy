@@ -4,8 +4,9 @@ namespace Powerbuddy {
         public TopBar () {
 			    Object ();
        }
-        public void set_app(Gtk.Application app) {
-            this.app = app;
+        public void set_app(Gtk.Application? app) {
+            if (app != null)
+                this.app = app;
         }
 	    construct {
             var menuitem_about =  new Gtk.MenuItem ();

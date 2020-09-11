@@ -18,6 +18,7 @@
 
 namespace Powerbuddy {
 	//[GtkTemplate (ui = "/com/github/max246/powerbuddy/window.ui")]
+
 	public class Window : Gtk.Window {
 		//[GtkChild]
 		//Gtk.Label label;
@@ -29,6 +30,7 @@ namespace Powerbuddy {
                 resizable: true,
                 title: _ ("Power Buddy"),
                 width_request: 800);
+
 			}
 			construct {
                 window_position = Gtk.WindowPosition.CENTER;
@@ -39,6 +41,7 @@ namespace Powerbuddy {
                 var sett =  new Powerbuddy.BatteryView();
 
                 Powerbuddy.TopBar bar = new Powerbuddy.TopBar();
+
                 bar.set_app(application);
                 set_titlebar(bar);
                 //pane.pack1 (bar, false, false);
