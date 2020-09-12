@@ -9,6 +9,7 @@ sources = [
   'src/Pages/DevicePage.vala',
   'src/Views/BatteryView.vala',
   'src/Widgets/TopBar.vala',
+  'src/Widgets/BatteryPurchase.vala',
 ]
 
 powerbuddy_deps = [

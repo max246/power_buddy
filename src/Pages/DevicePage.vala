@@ -20,11 +20,19 @@ namespace Powerbuddy {
             var warning_label = new Gtk.Label ("Warning: none");//Check what warning are there
             warning_label.xalign = 1;
 
-            var energy_label = new Gtk.Label ("Total enery: x , At the moment x and rate at x");//Cover to percent slider
+            var energy_label = new Gtk.Label ("Energy rate: 11W");//Cover to percent slider
             energy_label.xalign = 1;
+             var energy_amount = new Gtk.ProgressBar ();
+            energy_amount.text = "15/50 Wh";
+            energy_amount.set_fraction(0.5);
+            energy_amount.set_show_text(true);
 
-            var elpase_label = new Gtk.Label ("Reamining time: x and Percent %");//Cover to percent slider
+            var elpase_label = new Gtk.Label ("Reamining time: x");//Cover to percent slider
             elpase_label.xalign = 1;
+             var elpase_time = new Gtk.ProgressBar ();
+            elpase_time.text = "100%";
+            elpase_time.set_fraction(0.5);
+            elpase_time.set_show_text(true);
 
             var content_area = new Gtk.Grid ();
             content_area.column_spacing = 12;
@@ -34,7 +42,9 @@ namespace Powerbuddy {
             content_area.attach (state_label, 0, 2, 1, 1);
             content_area.attach (warning_label, 0, 3, 1, 1);
             content_area.attach (energy_label, 0, 4, 1, 1);
+            content_area.attach (energy_amount, 1, 4, 1, 1);
             content_area.attach (elpase_label, 0, 5, 1, 1);
+            content_area.attach (elpase_time, 1, 5, 1, 1);
 
             add (content_area);
         }
