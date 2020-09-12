@@ -1,11 +1,15 @@
 namespace Powerbuddy {
     public class StatsPage : Granite.SettingsPage {
-        public StatsPage () {
-            var user_name = Environment.get_user_name ();
+
+        Powerbuddy.BatteryModel model;
+        public StatsPage (Powerbuddy.BatteryModel model) {
+
                Object (
                 title: "Stats",
                 icon_name : "stats"
             );
+            this.model = model;
+
         }
 
         construct {
@@ -29,5 +33,7 @@ namespace Powerbuddy {
                 title = title_entry.text;
             });
         }
+
+
     }
 }

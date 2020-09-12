@@ -9,7 +9,16 @@ sources = [
   'src/Pages/DevicePage.vala',
   'src/Views/BatteryView.vala',
   'src/Widgets/TopBar.vala',
+
   'src/Widgets/BatteryPurchase.vala',
+
+  'src/Threads/UPowerThread.vala',
+  'src/Models/ACModel.vala',
+  'src/Models/BatteryModel.vala',
+  'src/Models/DeviceModel.vala',
+  'src/Models/OtherBatteryModel.vala',
+  'src/Models/UPowerModel.vala',
+
 ]
 
 powerbuddy_deps = [
