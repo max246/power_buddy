@@ -17,10 +17,10 @@ namespace Powerbuddy {
         }
 
         construct {
-            this.title_label = new Gtk.Label ("Last update:");
+            title_label = new Gtk.Label ("Last update:");
             title_label.xalign = 1;
 
-            this.charger_label = new Gtk.Label ("Charger is connected");
+            charger_label = new Gtk.Label ("Charger is connected");
             charger_label.xalign = 1;
 
             var content_area = new Gtk.Grid ();

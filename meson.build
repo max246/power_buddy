@@ -2,7 +2,7 @@
 project (
     'com.github.max246.powerbuddy',
     'vala', 'c',
-    version: '0.0.1'
+    version: '0.0.2'
 )
 
 # Translation module
