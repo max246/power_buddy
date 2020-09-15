@@ -1,6 +1,9 @@
 namespace Powerbuddy {
     public class HistoryPage : Granite.SettingsPage {
 
+
+//./var/lib/upower/history-time-full-DELL_KP4377-57-22096.dat
+
         Powerbuddy.BatteryModel model;
         public HistoryPage (Powerbuddy.BatteryModel model) {
 

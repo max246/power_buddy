@@ -24,6 +24,8 @@ namespace Powerbuddy {
         Gtk.ProgressBar battery_capacity;
         Gtk.Entry title_entry;
         Gtk.Grid  content_area;
+        Gtk.Label energy_rate_label;
+        Gtk.Label energy_rate_output_label;
         public BatteryPage (Powerbuddy.BatteryModel model) {
 
                Object (
@@ -75,21 +77,21 @@ namespace Powerbuddy {
             warning_output_label.xalign = 1;
 
 
-            energy_label = new Gtk.Label ("Energy rate: 11W");
+            energy_label = new Gtk.Label ("Energy:");
             energy_label.xalign = 1;
             energy_level = new Gtk.ProgressBar ();
             energy_level.text = "49.25/56Wh";
             energy_level.set_fraction(0.0);
             energy_level.set_show_text(true);
 
+            energy_rate_label = new Gtk.Label ("Energy rate:");
+            energy_rate_label.xalign = 1;
+            energy_rate_output_label = new Gtk.Label ("Energy rate:");
+            energy_rate_output_label.xalign = 1;
+
             battery_charge = new Gtk.Label ("11.5V");
-            voltage_label = new Gtk.Label ("Voltage:");
-
-            this.energy_label = new Gtk.Label ("Energy:  xx Enery full: Energy rate");
-            this.energy_label.xalign = 1;
-
-            this.voltage_label = new Gtk.Label ("Voltage:"); //Add flag when is lowr than X should be bought anew one
-            this.voltage_label.xalign = 1;
+            voltage_label = new Gtk.Label ("Voltage:"); //Add flag when is lowr than X should be bought anew one
+            voltage_label.xalign = 1;
 
 
             capacity_label = new Gtk.Label ("Capacity:");
@@ -104,7 +106,7 @@ namespace Powerbuddy {
             title_entry.placeholder_text = "This page's title";
 
             content_area = new Gtk.Grid ();
-            content_area.column_spacing = 12;
+            content_area.column_spacing = 4;
             content_area.row_spacing = 12;
             content_area.margin = 12;
 
@@ -167,15 +169,15 @@ namespace Powerbuddy {
             tech_output_label.set_text( this.model.technology);
             state_output_label.set_text(this.model.state);
             this.warning_output_label.set_text(this.model.warning);
-            this.energy_label.set_text("Energy Rate: %.2f W | Total: %d".printf(this.model.energy_rate, this.model.percent));
+            energy_rate_output_label.set_text("%.2f W".printf(this.model.energy_rate));
             this.battery_charge.set_text("%.2fV".printf(this.model.voltage));
 
-            capacity_label.set_text("Capacity (%.2fWh)".printf( this.model.energy_full_designed));
+
             battery_capacity.set_fraction((double)this.model.capacity/100.0);
-            battery_capacity.text = "d%".printf(this.model.capacity);
+            battery_capacity.text = "%d (%.2fWh)".printf(this.model.capacity,this.model.energy_full_designed);
 
             energy_level.set_fraction((double)this.model.energy/(double)this.model.energy_full);
-            energy_level.text = "%.2f of %.2fWh".printf(this.model.energy, this.model.energy_full);
+            energy_level.text = "%.2f of %.2fWh (%d)".printf(this.model.energy, this.model.energy_full, this.model.percent);
             show_all();
         }
 
